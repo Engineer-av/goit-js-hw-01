@@ -1,5 +1,5 @@
 const ADMIN_PASSWORD = "jqueryismyjam";
-let message = prompt("Введите пароль");
+const message = prompt("Введите пароль");
 
 let result;
 

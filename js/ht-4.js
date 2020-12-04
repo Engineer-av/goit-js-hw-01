@@ -1,20 +1,20 @@
 const credits = 23580;
 const pricePerDroit = 3000;
 
-let orderQuantity = prompt(
+const orderQuantity = prompt(
   "Введите количество дроидов, которые хотите заказать"
 );
 let totalPrice;
 let maxQuantity = credits / pricePerDroit;
+let notification;
 
 if (orderQuantity === null) {
-  console.log("Отменено пользователем!");
+  notification = "Отменено пользователем!";
 } else if (orderQuantity > maxQuantity) {
-  console.log("Недостаточно средств на счету!");
-} else if (orderQuantity < maxQuantity) {
+  notification = "Недостаточно средств на счету!";
+} else {
   totalPrice = orderQuantity * pricePerDroit;
-  console.log(
-    `Вы купили ${orderQuantity} дроидов, на счету осталось ${credits -
-      totalPrice} кредитов.`
-  );
+  notification = `Вы купили ${orderQuantity} дроидов, на счету осталось ${credits -
+    totalPrice} кредитов.`;
 }
+console.log(notification);

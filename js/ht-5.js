@@ -1,20 +1,27 @@
 const message = prompt("Укажите страну доставки");
 const countryDelivery =
+  message &&
   message.charAt(0).toUpperCase() + message.substring(1).toLowerCase();
 
 let price = 0;
-let result;
 let country;
+let result;
 
 switch (countryDelivery) {
+  case null:
+    result = "Пользователь отменил доставку!";
+    break;
+
   case "Китай":
     price = 100;
-    result = `Доставка в ${countryDelivery} будет стоить ${price} кредитов`;
+    country = "Китай";
+    result = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   case "Чили":
     price = 250;
-    result = `Доставка в ${countryDelivery} будет стоить ${price} кредитов`;
+    country = "Чили";
+    result = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   case "Австралия":
